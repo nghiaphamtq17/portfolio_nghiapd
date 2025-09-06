@@ -87,18 +87,18 @@ export default function Skills() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {skillCategories.map((category, index) => (
               <div
                 key={index}
-                className={`professional-card rounded-2xl p-8 hover-lift group ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}
+                className={`professional-card rounded-2xl p-4 md:p-8 hover-lift group ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="flex items-center mb-6">
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center text-white mr-4 group-hover:scale-110 transition-transform duration-300`}>
+                <div className="flex items-center mb-4 md:mb-6">
+                  <div className={`w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center text-white mr-3 md:mr-4 group-hover:scale-110 transition-transform duration-300`}>
                     {category.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-100 group-hover:text-blue-400 transition-colors">{category.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-100 group-hover:text-blue-400 transition-colors">{category.title}</h3>
                 </div>
 
                 <div className="space-y-3">
@@ -124,26 +124,26 @@ export default function Skills() {
                     }
                     
                     return (
-                      <div key={skillIndex} className="group/skill p-4 rounded-xl bg-slate-800/30 border border-slate-700/30 hover:border-slate-600/50 transition-all duration-300 hover:bg-slate-800/40">
-                        <div className="flex justify-between items-start mb-2">
+                      <div key={skillIndex} className="group/skill p-3 md:p-4 rounded-xl bg-slate-800/30 border border-slate-700/30 hover:border-slate-600/50 transition-all duration-300 hover:bg-slate-800/40">
+                        <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2 gap-2">
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-1">
-                              <h4 className="text-slate-200 font-semibold group-hover/skill:text-white transition-colors">{skill.name}</h4>
-                              <span className="text-lg">{getExperienceIcon(skill.experience)}</span>
+                              <h4 className="text-sm md:text-base text-slate-200 font-semibold group-hover/skill:text-white transition-colors">{skill.name}</h4>
+                              <span className="text-sm md:text-lg">{getExperienceIcon(skill.experience)}</span>
                             </div>
-                            <p className="text-sm text-slate-400 mb-2">{skill.description}</p>
-                            <div className="flex items-center gap-4 text-xs text-slate-500">
+                            <p className="text-xs md:text-sm text-slate-400 mb-2">{skill.description}</p>
+                            <div className="flex items-center gap-3 md:gap-4 text-xs text-slate-500">
                               <span className="flex items-center gap-1">
-                                <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                                <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-blue-400 rounded-full"></span>
                                 {skill.years}
                               </span>
                               <span className="flex items-center gap-1">
-                                <span className="w-2 h-2 bg-indigo-400 rounded-full"></span>
+                                <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-indigo-400 rounded-full"></span>
                                 {skill.projects}
                               </span>
                             </div>
                           </div>
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getExperienceColor(skill.experience)}`}>
+                          <span className={`px-2 md:px-3 py-1 rounded-full text-xs font-medium border ${getExperienceColor(skill.experience)} self-start md:self-auto`}>
                             {skill.experience}
                           </span>
                         </div>
@@ -156,9 +156,9 @@ export default function Skills() {
           </div>
 
           {/* Additional Skills */}
-          <div className={`mt-12 professional-card rounded-2xl p-8 hover-lift ${isVisible ? 'animate-fade-in delay-500' : 'opacity-0'}`}>
-            <h3 className="text-2xl font-bold text-slate-100 mb-6 text-center">Additional Skills</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className={`mt-8 md:mt-12 professional-card rounded-2xl p-4 md:p-8 hover-lift ${isVisible ? 'animate-fade-in delay-500' : 'opacity-0'}`}>
+            <h3 className="text-xl md:text-2xl font-bold text-slate-100 mb-4 md:mb-6 text-center">Additional Skills</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {[
                 'Responsive Design',
                 'Performance Optimization',
@@ -171,10 +171,10 @@ export default function Skills() {
               ].map((skill, index) => (
                 <div
                   key={index}
-                  className="bg-slate-800/40 rounded-lg p-4 text-center hover:bg-slate-700/50 transition-all duration-300 hover-scale group animate-bounce-in border border-slate-700/30 hover:border-slate-600/50"
+                  className="bg-slate-800/40 rounded-lg p-3 md:p-4 text-center hover:bg-slate-700/50 transition-all duration-300 hover-scale group animate-bounce-in border border-slate-700/30 hover:border-slate-600/50"
                   style={{ animationDelay: `${0.6 + index * 0.1}s` }}
                 >
-                  <span className="text-slate-300 font-medium group-hover:text-slate-100 transition-colors">{skill}</span>
+                  <span className="text-sm md:text-base text-slate-300 font-medium group-hover:text-slate-100 transition-colors">{skill}</span>
                 </div>
               ))}
             </div>
