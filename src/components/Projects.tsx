@@ -106,7 +106,7 @@ export default function Projects() {
     <section ref={sectionRef} id="projects" className="py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className={`text-center mb-16 ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}>
+          <div className={`text-center mb-16 ${isVisible ? 'animate-slide-in-up' : 'opacity-100 md:opacity-0'}`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent animate-gradient-shift">
                 Featured Projects
@@ -124,7 +124,7 @@ export default function Projects() {
                 key={index}
                 className={`grid lg:grid-cols-2 gap-8 items-center ${
                   index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                } ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}
+                } ${isVisible ? 'animate-slide-in-up' : 'opacity-100 md:opacity-0'}`}
                 style={{ animationDelay: `${index * 0.3}s` }}
               >
                 <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
@@ -219,7 +219,7 @@ export default function Projects() {
           </div>
 
           {/* Other Projects */}
-          <div className={isVisible ? 'animate-fade-in delay-500' : 'opacity-0'}>
+          <div className={isVisible ? 'animate-fade-in delay-500' : 'opacity-100 md:opacity-0'}>
             <h3 className="text-3xl font-bold text-white mb-12 text-center">Other Projects</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherProjects.map((project, index) => (

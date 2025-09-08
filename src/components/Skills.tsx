@@ -76,7 +76,7 @@ export default function Skills() {
     <section ref={sectionRef} id="skills" className="py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className={`text-center mb-16 ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}>
+          <div className={`text-center mb-16 ${isVisible ? 'animate-slide-in-up' : 'opacity-100 md:opacity-0'}`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent animate-gradient-shift">
                 Technical Skills
@@ -91,7 +91,7 @@ export default function Skills() {
             {skillCategories.map((category, index) => (
               <div
                 key={index}
-                className={`professional-card rounded-2xl p-4 md:p-8 hover-lift group ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}
+                className={`professional-card rounded-2xl p-4 md:p-8 hover-lift group ${isVisible ? 'animate-slide-in-up' : 'opacity-100 md:opacity-0'}`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="flex items-center mb-4 md:mb-6">
@@ -156,7 +156,7 @@ export default function Skills() {
           </div>
 
           {/* Additional Skills */}
-          <div className={`mt-8 md:mt-12 professional-card rounded-2xl p-4 md:p-8 hover-lift ${isVisible ? 'animate-fade-in delay-500' : 'opacity-0'}`}>
+          <div className={`mt-8 md:mt-12 professional-card rounded-2xl p-4 md:p-8 hover-lift ${isVisible ? 'animate-fade-in delay-500' : 'opacity-100 md:opacity-0'}`}>
             <h3 className="text-xl md:text-2xl font-bold text-slate-100 mb-4 md:mb-6 text-center">Additional Skills</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {[
