@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Code, Coffee, Rocket, Sparkles, Star } from 'lucide-react'
+import { Code, Coffee, Rocket, Sparkles, Star, Download } from 'lucide-react'
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false)
@@ -100,17 +100,26 @@ export default function Hero() {
           </div>
           
           {/* CTA Buttons with enhanced effects */}
-          <div className={`flex flex-col sm:flex-row gap-4 justify-center ${isVisible ? 'animate-slide-in-up delay-900' : 'opacity-0'}`}>
+          <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center ${isVisible ? 'animate-slide-in-up delay-900' : 'opacity-0'}`}>
             <a
               href="#projects"
-              className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-full hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover-lift relative overflow-hidden"
+              className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-full hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover-lift relative overflow-hidden w-full sm:w-auto"
             >
               <span className="relative z-10">View Projects</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             <a
+              href="/cv/CV_Pham_Dai_Nghia.pdf"
+              download="CV_Pham_Dai_Nghia.pdf"
+              className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover-lift relative overflow-hidden flex items-center justify-center gap-2 w-full sm:w-auto"
+            >
+              <Download className="w-5 h-5 relative z-10" />
+              <span className="relative z-10">Download CV</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </a>
+            <a
               href="#contact"
-              className="group px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-105 hover-lift relative overflow-hidden"
+              className="group px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-105 hover-lift relative overflow-hidden w-full sm:w-auto"
             >
               <span className="relative z-10">Get In Touch</span>
               <div className="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
