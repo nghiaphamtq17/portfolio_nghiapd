@@ -1,27 +1,10 @@
-'use client'
-
-import { useEffect, useState } from 'react'
 import { Code, Coffee, Rocket, Sparkles, Star, Download } from 'lucide-react'
 
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [currentText, setCurrentText] = useState('')
-  const [currentIndex, setCurrentIndex] = useState(0)
-  
+  // SSR: Không dùng useState/useEffect để lấy giá trị phía server
+  // Hiển thị luôn nội dung đầy đủ, không animation typing hoặc hiệu ứng vào
   const fullText = "Frontend Developer with 4 years of experience"
-  
-  useEffect(() => {
-    setIsVisible(true)
-    
-    // Typing animation
-    if (currentIndex < fullText.length) {
-      const timeout = setTimeout(() => {
-        setCurrentText(prev => prev + fullText[currentIndex])
-        setCurrentIndex(prev => prev + 1)
-      }, 100)
-      return () => clearTimeout(timeout)
-    }
-  }, [currentIndex, fullText])
+  const isVisible = true
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
@@ -58,10 +41,10 @@ export default function Hero() {
             <Sparkles className="inline-block w-8 h-8 md:w-12 md:h-12 text-blue-400 ml-4 animate-pulse" />
           </h1>
           
-          {/* Typing animation for subtitle */}
+          {/* Subtitle không typing animation, show luôn */}
           <div className="h-8 md:h-10 mb-8 flex items-center justify-center">
             <p className="text-xl md:text-2xl text-gray-300 font-light">
-              {currentText}
+              {fullText}
               <span className="animate-pulse">|</span>
             </p>
           </div>
