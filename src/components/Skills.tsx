@@ -1,162 +1,219 @@
 import { Code, Database, Server, Palette } from "lucide-react";
+import { SkillCategory, SkillCategoriesProps } from "@/types/skills";
 
-export default function Skills() {
-  const skillCategories = [
+// Icon mapping for dynamic icons
+const iconMap = {
+  Code: Code,
+  Database: Database,
+  Server: Server,
+  Palette: Palette,
+};
+
+export default function Skills({ skillCategories }: SkillCategoriesProps) {
+  // Fallback data if no data is provided
+  const fallbackCategories: SkillCategory[] = [
     {
+      id: '1',
       title: "Frontend Development",
-      icon: <Code className="w-8 h-8" />,
+      icon: "Code",
       color: "from-blue-500 to-indigo-600",
+      slug: "frontend-development",
       skills: [
         {
+          id: '1',
           name: "React.js",
           experience: "Expert",
           years: "4 years",
           projects: "15+ projects",
           description: "Building scalable web applications",
+          category: '1'
         },
         {
+          id: '2',
           name: "Next.js",
           experience: "Advanced",
           years: "3.5 years",
           projects: "12+ projects",
           description: "Full-stack React framework",
+          category: '1'
         },
         {
+          id: '3',
           name: "TypeScript",
           experience: "Advanced",
           years: "3 years",
           projects: "10+ projects",
           description: "Type-safe development",
+          category: '1'
         },
         {
+          id: '4',
           name: "Tailwind CSS",
           experience: "Advanced",
           years: "2.5 years",
           projects: "8+ projects",
           description: "Utility-first CSS framework",
+          category: '1'
         },
         {
+          id: '5',
           name: "HTML/CSS/JS",
           experience: "Expert",
           years: "4 years",
           projects: "20+ projects",
           description: "Core web technologies",
+          category: '1'
         },
         {
+          id: '6',
           name: "Angular",
           experience: "Intermediate",
           years: "1 year",
           projects: "3+ projects",
           description: "Enterprise applications",
+          category: '1'
         },
       ],
     },
     {
+      id: '2',
       title: "Backend Development",
-      icon: <Server className="w-8 h-8" />,
+      icon: "Server",
       color: "from-emerald-500 to-teal-600",
+      slug: "backend-development",
       skills: [
         {
+          id: '7',
           name: "Node.js",
           experience: "Intermediate",
           years: "1 year",
           projects: "5+ projects",
           description: "Server-side JavaScript",
+          category: '2'
         },
         {
+          id: '8',
           name: "Express.js",
           experience: "Intermediate",
           years: "1 year",
           projects: "4+ projects",
           description: "Web application framework",
+          category: '2'
         },
         {
+          id: '9',
           name: "NestJS",
           experience: "Intermediate",
           years: "1 year",
           projects: "3+ projects",
           description: "Scalable server applications",
+          category: '2'
         },
         {
+          id: '10',
           name: ".NET",
           experience: "Beginner",
           years: "6 months",
           projects: "2+ projects",
           description: "Microsoft ecosystem",
+          category: '2'
         },
       ],
     },
     {
+      id: '3',
       title: "Database & Storage",
-      icon: <Database className="w-8 h-8" />,
+      icon: "Database",
       color: "from-violet-500 to-purple-600",
+      slug: "database-storage",
       skills: [
         {
+          id: '11',
           name: "MySQL",
           experience: "Intermediate",
           years: "1 year",
           projects: "6+ projects",
           description: "Relational database management",
+          category: '3'
         },
         {
+          id: '12',
           name: "MongoDB",
           experience: "Intermediate",
           years: "8 months",
           projects: "4+ projects",
           description: "NoSQL document database",
+          category: '3'
         },
         {
+          id: '13',
           name: "PostgreSQL",
           experience: "Beginner",
           years: "6 months",
           projects: "2+ projects",
           description: "Advanced SQL database",
+          category: '3'
         },
       ],
     },
     {
+      id: '4',
       title: "UI/UX & Tools",
-      icon: <Palette className="w-8 h-8" />,
+      icon: "Palette",
       color: "from-amber-500 to-orange-600",
+      slug: "ui-ux-tools",
       skills: [
         {
+          id: '14',
           name: "PrimeNG",
           experience: "Advanced",
           years: "2 years",
           projects: "8+ projects",
           description: "Angular UI component library",
+          category: '4'
         },
         {
+          id: '15',
           name: "Material-UI",
           experience: "Advanced",
           years: "1.5 years",
           projects: "6+ projects",
           description: "React component library",
+          category: '4'
         },
         {
+          id: '16',
           name: "Ant Design",
           experience: "Intermediate",
           years: "1 year",
           projects: "4+ projects",
           description: "Enterprise UI design",
+          category: '4'
         },
         {
+          id: '17',
           name: "Figma",
           experience: "Intermediate",
           years: "1 year",
           projects: "5+ projects",
           description: "UI/UX design tool",
+          category: '4'
         },
         {
+          id: '18',
           name: "Git",
           experience: "Advanced",
           years: "3 years",
           projects: "20+ projects",
           description: "Version control system",
+          category: '4'
         },
       ],
     },
   ];
+
+  // Use provided data or fallback
+  const categories = skillCategories && skillCategories.length > 0 ? skillCategories : fallbackCategories;
 
   return (
     <>
@@ -326,25 +383,28 @@ export default function Skills() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {skillCategories.map((category, index) => (
-                <div
-                  key={index}
-                  className={`professional-card rounded-2xl p-4 md:p-8 hover-lift group animate-slide-in-up`}
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <div className="flex items-center mb-4 md:mb-6">
-                    <div
-                      className={`w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center text-white mr-3 md:mr-4 group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      {category.icon}
+              {categories.map((category, index) => {
+                const IconComponent = iconMap[category.icon as keyof typeof iconMap] || Code;
+                
+                return (
+                  <div
+                    key={category.id || index}
+                    className={`professional-card rounded-2xl p-4 md:p-8 hover-lift group animate-slide-in-up`}
+                    style={{ animationDelay: `${index * 0.2}s` }}
+                  >
+                    <div className="flex items-center mb-4 md:mb-6">
+                      <div
+                        className={`w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center text-white mr-3 md:mr-4 group-hover:scale-110 transition-transform duration-300`}
+                      >
+                        <IconComponent className="w-6 h-6 md:w-8 md:h-8" />
+                      </div>
+                      <h3 className="text-xl md:text-2xl font-bold text-slate-100 group-hover:text-blue-400 transition-colors">
+                        {category.title}
+                      </h3>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-slate-100 group-hover:text-blue-400 transition-colors">
-                      {category.title}
-                    </h3>
-                  </div>
 
-                  <div className="space-y-3">
-                    {category.skills.map((skill, skillIndex) => {
+                    <div className="space-y-3">
+                      {category.skills.map((skill, skillIndex) => {
                       const getExperienceColor = (experience: string) => {
                         switch (experience) {
                           case "Expert":
@@ -413,11 +473,12 @@ export default function Skills() {
                             </span>
                           </div>
                         </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Additional Skills */}
