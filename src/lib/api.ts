@@ -39,8 +39,7 @@ export async function fetchFromPayload<T>(
 
   try {
     // Determine base URL based on environment
-    const baseUrl = process.env.NODE_ENV === 'production' 
-      ? process.env.PAYLOAD_CMS_URL || process.env.PAYLOAD_CMS_URL
+    const baseUrl =  process.env.PAYLOAD_CMS_URL ? process.env.PAYLOAD_CMS_URL
       : 'http://localhost:3000';
     
     const url = `${baseUrl}/api/${endpoint}`;
