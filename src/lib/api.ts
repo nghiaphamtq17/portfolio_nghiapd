@@ -72,7 +72,7 @@ export async function fetchFromPayload<T>(
  * @param endpoints - Array of endpoint configurations
  * @returns Promise with all fetched data
  */
-export async function fetchMultipleFromPayload<T extends Record<string, any>>(
+export async function fetchMultipleFromPayload<T extends Record<string, unknown>>(
   endpoints: Array<{ key: keyof T; endpoint: string; options?: FetchOptions }>
 ): Promise<T> {
   const promises = endpoints.map(({ key, endpoint, options }) =>

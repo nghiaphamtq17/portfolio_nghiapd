@@ -17,7 +17,7 @@ import { fetchMultipleFromPayload } from "@/lib/api";
 import { ENDPOINTS } from "@/config/endpoints";
 
 // Define the data structure for all components
-interface HomePageData {
+interface HomePageData extends Record<string, unknown> {
   skillCategories: SkillCategory[];
   projects: Project[];
   experiences: ExperienceType[];
@@ -29,10 +29,10 @@ export default async function Home() {
   // Fetch all data from Payload CMS in parallel using config endpoints
   const data = await fetchMultipleFromPayload<HomePageData>([
     { key: 'skillCategories', endpoint: ENDPOINTS.SKILL_CATEGORIES },
-    // { key: 'projects', endpoint: ENDPOINTS.PROJECTS },
-    // { key: 'experiences', endpoint: ENDPOINTS.EXPERIENCES },
-    // { key: 'about', endpoint: ENDPOINTS.ABOUT },
-    // { key: 'contact', endpoint: ENDPOINTS.CONTACT },
+    { key: 'projects', endpoint: ENDPOINTS.PROJECTS },
+    { key: 'experiences', endpoint: ENDPOINTS.EXPERIENCES },
+    { key: 'about', endpoint: ENDPOINTS.ABOUT },
+    { key: 'contact', endpoint: ENDPOINTS.CONTACT },
   ]);
 
   return (

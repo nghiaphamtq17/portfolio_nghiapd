@@ -5,16 +5,6 @@ const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').re
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString()
 
-  const routes = [
-    '',
-    '#home',
-    '#about',
-    '#skills',
-    '#experience',
-    '#projects',
-    '#contact',
-  ]
-
   // Only include canonical paths in sitemap (anchors are not valid entries)
   const canonicalRoutes = ['']
 
