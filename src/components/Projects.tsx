@@ -1,272 +1,420 @@
-'use client'
-
-import { useState, useRef, useEffect } from 'react'
-import { ExternalLink, Github, Eye, Star, Zap } from 'lucide-react'
+import { ExternalLink, Github, Eye, Star, Zap } from "lucide-react";
 
 export default function Projects() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.2 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
   const featuredProjects = [
     {
-      title: 'Plevia City',
-      description: 'Premium real estate website with modern interface and exceptional user experience. Integrated smart search features and 3D visualization.',
-      image: '/api/placeholder/600/400',
-      technologies: ['Next.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'Three.js'],
-      liveUrl: 'https://pleviacity.vn/',
+      title: "Plevia City",
+      description:
+        "Premium real estate website with modern interface and exceptional user experience. Integrated smart search features and 3D visualization.",
+      image: "/api/placeholder/600/400",
+      technologies: [
+        "Next.js",
+        "React.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Three.js",
+      ],
+      liveUrl: "https://pleviacity.vn/",
       githubUrl: null,
       features: [
-        'Responsive design for all devices',
-        'Interactive 3D map integration',
-        'Smart search system',
-        'SEO and performance optimization'
-      ]
+        "Responsive design for all devices",
+        "Interactive 3D map integration",
+        "Smart search system",
+        "SEO and performance optimization",
+      ],
     },
     {
-      title: 'Recoin Platform',
-      description: 'Cryptocurrency trading platform with intuitive interface and high-security features. Supports multiple cryptocurrencies and real-time trading.',
-      image: '/api/placeholder/600/400',
-      technologies: ['React.js', 'TypeScript', 'Web3', 'Ethers.js', 'Chart.js'],
-      liveUrl: 'https://recoin.vn/',
+      title: "Recoin Platform",
+      description:
+        "Cryptocurrency trading platform with intuitive interface and high-security features. Supports multiple cryptocurrencies and real-time trading.",
+      image: "/api/placeholder/600/400",
+      technologies: [
+        "React.js",
+        "TypeScript",
+        "Web3",
+        "Ethers.js",
+        "Chart.js",
+      ],
+      liveUrl: "https://recoin.vn/",
       githubUrl: null,
       features: [
-        'Real-time trading',
-        'Visual price charts',
-        'High security with Web3',
-        'Multiple wallet support'
-      ]
+        "Real-time trading",
+        "Visual price charts",
+        "High security with Web3",
+        "Multiple wallet support",
+      ],
     },
     {
-      title: 'Central Thailand E-commerce',
-      description: 'Leading e-commerce website in Thailand with millions of products. Integrated diverse payment systems and smart inventory management.',
-      image: '/api/placeholder/600/400',
-      technologies: ['React.js', 'Next.js', 'Node.js', 'Microservices', 'Redis'],
-      liveUrl: 'https://www.central.co.th/',
+      title: "Central Thailand E-commerce",
+      description:
+        "Leading e-commerce website in Thailand with millions of products. Integrated diverse payment systems and smart inventory management.",
+      image: "/api/placeholder/600/400",
+      technologies: [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Microservices",
+        "Redis",
+      ],
+      liveUrl: "https://www.central.co.th/",
       githubUrl: null,
       features: [
-        'Microservices architecture',
-        'Performance optimization',
-        'Diverse payment systems',
-        'Smart inventory management'
-      ]
-    }
-  ]
+        "Microservices architecture",
+        "Performance optimization",
+        "Diverse payment systems",
+        "Smart inventory management",
+      ],
+    },
+  ];
 
   const otherProjects = [
     {
-      title: 'PowerBuy Thailand',
-      description: 'Electronics and technology retail website with user-friendly interface',
-      technologies: ['React.js', 'Node.js', 'MongoDB'],
-      liveUrl: 'https://powerbuy.co.th/th/'
+      title: "PowerBuy Thailand",
+      description:
+        "Electronics and technology retail website with user-friendly interface",
+      technologies: ["React.js", "Node.js", "MongoDB"],
+      liveUrl: "https://powerbuy.co.th/th/",
     },
     {
-      title: 'Carma Australia',
-      description: 'Car sharing platform with smart booking features',
-      technologies: ['React.js', 'Express.js', 'PostgreSQL'],
-      liveUrl: 'https://carma.com.au/'
+      title: "Carma Australia",
+      description: "Car sharing platform with smart booking features",
+      technologies: ["React.js", "Express.js", "PostgreSQL"],
+      liveUrl: "https://carma.com.au/",
     },
     {
-      title: 'Omini Vietnam',
-      description: 'Service and utility website with modern interface',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-      liveUrl: 'https://omini.vn/'
+      title: "Omini Vietnam",
+      description: "Service and utility website with modern interface",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+      liveUrl: "https://omini.vn/",
     },
     {
-      title: 'KB Fina Management',
-      description: 'Financial and banking management system for KB Fina',
-      technologies: ['Angular', 'PrimeNG', 'MySQL'],
-      liveUrl: null
+      title: "KB Fina Management",
+      description: "Financial and banking management system for KB Fina",
+      technologies: ["Angular", "PrimeNG", "MySQL"],
+      liveUrl: null,
     },
     {
-      title: 'Toyota Management System',
-      description: 'Internal management system for Toyota Vietnam',
-      technologies: ['React.js', 'Node.js', 'PostgreSQL'],
-      liveUrl: null
-    }
-  ]
+      title: "Toyota Management System",
+      description: "Internal management system for Toyota Vietnam",
+      technologies: ["React.js", "Node.js", "PostgreSQL"],
+      liveUrl: null,
+    },
+  ];
 
   return (
-    <section ref={sectionRef} id="projects" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className={`text-center mb-16 ${isVisible ? 'animate-slide-in-up' : 'opacity-100 md:opacity-0'}`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent animate-gradient-shift">
-                Featured Projects
-              </span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              The projects I&apos;m most proud of over the past 4 years
-            </p>
-          </div>
+    <>
+      {/* CSS animations for SSR */}
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          @keyframes slideInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+          
+          @keyframes bounceIn {
+            0% {
+              opacity: 0;
+              transform: scale(0.3);
+            }
+            50% {
+              opacity: 1;
+              transform: scale(1.05);
+            }
+            70% {
+              transform: scale(0.9);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+          
+          @keyframes gradientShift {
+            0%, 100% {
+              background-position: 0% 50%;
+            }
+            50% {
+              background-position: 100% 50%;
+            }
+          }
+          
+          .animate-slide-in-up {
+            animation: slideInUp 0.8s ease-out forwards;
+          }
+          
+          .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+          }
+          
+          .animate-bounce-in {
+            animation: bounceIn 0.6s ease-out forwards;
+          }
+          
+          .animate-gradient-shift {
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease infinite;
+          }
+          
+          .delay-200 {
+            animation-delay: 0.2s;
+          }
+          
+          .delay-300 {
+            animation-delay: 0.3s;
+          }
+          
+          .delay-500 {
+            animation-delay: 0.5s;
+          }
+          
+          .delay-600 {
+            animation-delay: 0.6s;
+          }
+          
+          .delay-700 {
+            animation-delay: 0.7s;
+          }
+          
+          .delay-800 {
+            animation-delay: 0.8s;
+          }
+          
+          .delay-900 {
+            animation-delay: 0.9s;
+          }
+          
+          .delay-1000 {
+            animation-delay: 1.0s;
+          }
+          
+          .delay-1100 {
+            animation-delay: 1.1s;
+          }
+          
+          .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+          }
+          
+          .hover-scale {
+            transition: transform 0.3s ease;
+          }
+          
+          .hover-scale:hover {
+            transform: scale(1.05);
+          }
+          
+          .hover-glow {
+            transition: box-shadow 0.3s ease;
+          }
+          
+          .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+          }
+        `,
+        }}
+      />
 
-          {/* Featured Projects */}
-          <div className="space-y-16 mb-20">
-            {featuredProjects.map((project, index) => (
-              <div
-                key={index}
-                className={`grid lg:grid-cols-2 gap-8 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                } ${isVisible ? 'animate-slide-in-up' : 'opacity-100 md:opacity-0'}`}
-                style={{ animationDelay: `${index * 0.3}s` }}
-              >
-                <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                  <div 
-                    className="bg-slate-800/50 rounded-2xl p-8 backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover-lift group relative overflow-hidden"
-                    onMouseEnter={() => setHoveredProject(index)}
-                    onMouseLeave={() => setHoveredProject(null)}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
-                    <div className="relative z-10">
-                      <div className="flex items-center gap-3 mb-4">
-                        <h3 className="text-3xl font-bold text-white group-hover:text-purple-400 transition-colors">{project.title}</h3>
-                        <Star className="w-6 h-6 text-yellow-400 animate-pulse" />
-                      </div>
-                      
-                      <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
-                      
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-                          <Zap className="w-5 h-5 text-yellow-400" />
-                          Key Features:
-                        </h4>
-                        <ul className="space-y-2">
-                          {project.features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-start text-gray-300 group-hover:text-white transition-colors">
-                              <span className="text-purple-400 mr-2 animate-pulse">•</span>
-                              <span>{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+      <section id="projects" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16 animate-slide-in-up">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent animate-gradient-shift">
+                  Featured Projects
+                </span>
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                The projects I&apos;m most proud of over the past 4 years
+              </p>
+            </div>
 
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-white mb-3">Technologies:</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {project.technologies.map((tech, techIndex) => (
-                            <span
-                              key={techIndex}
-                              className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 px-3 py-1 rounded-full text-sm hover:from-purple-500/30 hover:to-pink-500/30 transition-all duration-300 hover-scale"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="flex gap-4">
-                        {project.liveUrl && (
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group/btn flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 hover-glow relative overflow-hidden"
-                          >
-                              <span className="relative z-10">View Website</span>
-                            <Eye className="w-5 h-5 relative z-10" />
-                            <div className="absolute inset-0 bg-white/20 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                          </a>
-                        )}
-                        {project.githubUrl && (
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group/btn flex items-center gap-2 border-2 border-purple-500 text-purple-400 px-6 py-3 rounded-full hover:bg-purple-500 hover:text-white transition-all duration-300 hover-scale relative overflow-hidden"
-                          >
-                            <span className="relative z-10">Source Code</span>
-                            <Github className="w-5 h-5 relative z-10" />
-                            <div className="absolute inset-0 bg-purple-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                  <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl p-8 border border-purple-500/30 hover-lift group">
-                    <div className="aspect-video bg-slate-700/50 rounded-xl flex items-center justify-center relative overflow-hidden">
-                      <div className="text-center group-hover:scale-110 transition-transform duration-300">
-                        <ExternalLink className="w-16 h-16 text-purple-400 mx-auto mb-4 group-hover:text-purple-300 transition-colors" />
-                        <p className="text-gray-400 group-hover:text-white transition-colors">Project Screenshot</p>
-                        <p className="text-sm text-gray-500 mt-2 group-hover:text-gray-400 transition-colors">{project.title}</p>
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Other Projects */}
-          <div className={isVisible ? 'animate-fade-in delay-500' : 'opacity-100 md:opacity-0'}>
-            <h3 className="text-3xl font-bold text-white mb-12 text-center">Other Projects</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {otherProjects.map((project, index) => (
+            {/* Featured Projects */}
+            <div className="space-y-16 mb-20">
+              {featuredProjects.map((project, index) => (
                 <div
                   key={index}
-                  className="bg-slate-700/50 rounded-2xl p-6 backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 group hover-lift animate-bounce-in"
-                  style={{ animationDelay: `${0.6 + index * 0.1}s` }}
+                  className={`grid lg:grid-cols-2 gap-8 items-center ${
+                    index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                  } animate-slide-in-up`}
+                  style={{ animationDelay: `${index * 0.3}s` }}
                 >
-                  <div className="flex items-center justify-between mb-3">
-                    <h4 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
-                      {project.title}
-                    </h4>
-                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                  </div>
-                  
-                  <p className="text-gray-400 mb-4 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">{project.description}</p>
-                  
-                  <div className="mb-4">
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="bg-slate-600/50 text-gray-300 px-2 py-1 rounded text-xs hover:bg-slate-500/50 hover:text-white transition-all duration-300 hover-scale"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                  <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
+                    <div className="bg-slate-800/50 rounded-2xl p-8 backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover-lift group relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                      <div className="relative z-10">
+                        <div className="flex items-center gap-3 mb-4">
+                          <h3 className="text-3xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                            {project.title}
+                          </h3>
+                          <Star className="w-6 h-6 text-yellow-400 animate-pulse" />
+                        </div>
+
+                        <p className="text-gray-300 mb-6 leading-relaxed">
+                          {project.description}
+                        </p>
+
+                        <div className="mb-6">
+                          <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                            <Zap className="w-5 h-5 text-yellow-400" />
+                            Key Features:
+                          </h4>
+                          <ul className="space-y-2">
+                            {project.features.map((feature, featureIndex) => (
+                              <li
+                                key={featureIndex}
+                                className="flex items-start text-gray-300 group-hover:text-white transition-colors"
+                              >
+                                <span className="text-purple-400 mr-2 animate-pulse">
+                                  •
+                                </span>
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="mb-6">
+                          <h4 className="text-lg font-semibold text-white mb-3">
+                            Technologies:
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {project.technologies.map((tech, techIndex) => (
+                              <span
+                                key={techIndex}
+                                className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 px-3 py-1 rounded-full text-sm hover:from-purple-500/30 hover:to-pink-500/30 transition-all duration-300 hover-scale"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="flex gap-4">
+                          {project.liveUrl && (
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group/btn flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 hover-glow relative overflow-hidden"
+                            >
+                              <span className="relative z-10">View Website</span>
+                              <Eye className="w-5 h-5 relative z-10" />
+                              <div className="absolute inset-0 bg-white/20 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                            </a>
+                          )}
+                          {project.githubUrl && (
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group/btn flex items-center gap-2 border-2 border-purple-500 text-purple-400 px-6 py-3 rounded-full hover:bg-purple-500 hover:text-white transition-all duration-300 hover-scale relative overflow-hidden"
+                            >
+                              <span className="relative z-10">Source Code</span>
+                              <Github className="w-5 h-5 relative z-10" />
+                              <div className="absolute inset-0 bg-purple-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                            </a>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-sm group/link"
-                    >
-                      <ExternalLink className="w-4 h-4 group-hover/link:rotate-12 transition-transform duration-300" />
-                      View Website
-                    </a>
-                  )}
+                  <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                    <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl p-8 border border-purple-500/30 hover-lift group">
+                      <div className="aspect-video bg-slate-700/50 rounded-xl flex items-center justify-center relative overflow-hidden">
+                        <div className="text-center group-hover:scale-110 transition-transform duration-300">
+                          <ExternalLink className="w-16 h-16 text-purple-400 mx-auto mb-4 group-hover:text-purple-300 transition-colors" />
+                          <p className="text-gray-400 group-hover:text-white transition-colors">
+                            Project Screenshot
+                          </p>
+                          <p className="text-sm text-gray-500 mt-2 group-hover:text-gray-400 transition-colors">
+                            {project.title}
+                          </p>
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
+
+            {/* Other Projects */}
+            <div className="animate-fade-in delay-500">
+              <h3 className="text-3xl font-bold text-white mb-12 text-center">
+                Other Projects
+              </h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {otherProjects.map((project, index) => (
+                  <div
+                    key={index}
+                    className="bg-slate-700/50 rounded-2xl p-6 backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 group hover-lift animate-bounce-in"
+                    style={{ animationDelay: `${0.6 + index * 0.1}s` }}
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <h4 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                        {project.title}
+                      </h4>
+                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                    </div>
+
+                    <p className="text-gray-400 mb-4 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
+                      {project.description}
+                    </p>
+
+                    <div className="mb-4">
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="bg-slate-600/50 text-gray-300 px-2 py-1 rounded text-xs hover:bg-slate-500/50 hover:text-white transition-all duration-300 hover-scale"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-sm group/link"
+                      >
+                        <ExternalLink className="w-4 h-4 group-hover/link:rotate-12 transition-transform duration-300" />
+                        View Website
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  )
+      </section>
+    </>
+  );
 }
