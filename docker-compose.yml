@@ -1,14 +1,9 @@
 services:
   portfolio-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     container_name: portfolio_nghiapd
     restart: unless-stopped
     ports:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-      - NEXT_TELEMETRY_DISABLED=1
-    volumes:
-      - ./public/cv:/app/public/cv:ro
