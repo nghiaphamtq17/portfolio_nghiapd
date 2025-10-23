@@ -133,7 +133,7 @@ export default function About() {
 
                     <div className="flex items-center text-slate-300 group-hover:text-slate-100 transition-colors">
                       <MapPin className="w-5 h-5 text-blue-400 mr-3 group-hover:scale-110 transition-transform" />
-                      <span>Vietnam</span>
+                      <span>Cầu Giấy - Hà Nội</span>
                     </div>
 
                     <div className="flex items-center text-slate-300 group-hover:text-slate-100 transition-colors">
@@ -194,12 +194,12 @@ export default function About() {
                   </h3>
                   <div className="space-y-4 text-gray-300 leading-relaxed group-hover:text-white transition-colors">
                     <p className="group-hover:translate-x-2 transition-transform duration-300">
-                      I started my programming journey in 2020 as a student at FPT
-                      Polytechnic. From the first lines of code, I was captivated
+                      I started my programming journey in 2019 as a student at FPT
+                      Polytechnic studying Web Development. From the first lines of code, I was captivated
                       by the ability to create amazing web applications.
                     </p>
                     <p className="group-hover:translate-x-2 transition-transform duration-300 delay-100">
-                      With 4 years of experience in frontend development, I have
+                      With 5+ years of experience in fullstack development, I have
                       had the opportunity to work with several large companies
                       such as SmartOSC, KBFina, and currently Nexus Frontier Tech.
                       Each project has provided me with valuable lessons and
@@ -219,7 +219,7 @@ export default function About() {
                     Goals
                   </h3>
                   <p className="text-gray-300 leading-relaxed group-hover:text-white transition-colors">
-                    To become a professional Senior Frontend Developer,
+                    To become a professional Senior Fullstack Developer,
                     contributing to building technology products that have a
                     positive impact on people&apos;s lives.
                   </p>

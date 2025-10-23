@@ -12,46 +12,49 @@ export default function Experience() {
   const experiences = [
     {
       company: "Nexus Frontier Tech",
-      position: "Frontend Developer",
+      position: "Fullstack Engineer",
       period: "Current",
-      duration: "Currently Working",
-      location: "Vietnam",
+      duration: "2025 - Now",
+      location: "Cầu Giấy - Hà Nội",
       description:
-        "Developing modern web applications with React.js and Next.js. Participating in large and complex projects.",
-      technologies: ["React.js", "Next.js", "TypeScript", "Tailwind CSS"],
+        "As a Fullstack Web Developer, I design, develop, and maintain web applications using .NET for the backend and Angular for the frontend. My responsibilities include implementing APIs, handling database integration, ensuring application performance, and delivering responsive, user-friendly interfaces.",
+      technologies: [".NET", "Angular", "TypeScript", "SQL Server", "RESTful API"],
       achievements: [
-        "Performance optimization for large applications",
-        "Building reusable component library",
-        "Mentoring junior developers",
+        "Implementing APIs and database integration",
+        "Ensuring application performance optimization",
+        "Delivering responsive, user-friendly interfaces",
+        "Collaborating with cross-functional teams",
       ],
     },
     {
       company: "KBFina",
-      position: "Frontend Developer",
-      period: "1.5 years",
-      duration: "2022 - 2023",
-      location: "Vietnam",
+      position: "Software Engineer",
+      period: "2 years",
+      duration: "2023 - 2025",
+      location: "Cầu Giấy - Hà Nội",
       description:
-        "Developing financial and banking management systems. Working with enterprise projects.",
-      technologies: ["React.js", "Angular", "PrimeNG", "MySQL"],
+        "Worked as a frontend developer in the software development team. Developed and maintained e-commerce systems and collaborated with other developers to deliver high-quality code and solutions.",
+      technologies: ["React.js", "Angular", "PrimeNG", "MySQL", "JavaScript"],
       achievements: [
-        "Building financial management dashboard",
-        "Integrating with banking APIs",
-        "Improving UX/UI for financial applications",
+        "Managing customer e-wallet information and transaction data",
+        "Managing event streams and application tasks",
+        "Building KB ILSANG version for Indonesian market",
+        "Developing new features suitable for Indonesian market",
       ],
     },
     {
       company: "SmartOSC",
-      position: "Frontend Developer",
-      period: "1.5 years",
-      duration: "2020 - 2022",
-      location: "Vietnam",
+      position: "Software Engineer",
+      period: "2 years",
+      duration: "2021 - 2023",
+      location: "Cầu Giấy - Hà Nội",
       description:
-        "Started programming career with e-commerce and web application projects.",
-      technologies: ["React.js", "HTML/CSS/JS", "Node.js", "Express.js"],
+        "Worked as a frontend developer in the software development team. Developed and maintained e-commerce systems and collaborated with other developers to deliver high-quality code and solutions.",
+      technologies: ["React.js", "Next.js", "GraphQL", "Node.js", "Express.js"],
       achievements: [
-        "Developing e-commerce websites",
-        "Learning and applying best practices",
+        "Successfully developed car e-commerce system using ReactJS, NextJS, GraphQL, and Contentful",
+        "Contributed to e-commerce ecosystem for Thailand client using ReactJS and GraphQL",
+        "Planned and developed new features and refactored code",
         "Working in Agile environment",
       ],
     },
@@ -61,38 +64,56 @@ export default function Experience() {
     {
       name: "Plevia City",
       url: "https://pleviacity.vn/",
-      description: "Premium real estate website with modern interface",
-      technologies: ["Next.js", "React.js", "Tailwind CSS"],
+      description: "Fullstack Developer - Optimize website SEO and convert pages from Client Side Rendering to Server Side Rendering",
+      technologies: ["Next.js", "React.js", "SSR", "ISR", "SEO"],
     },
     {
       name: "Recoin",
       url: "https://recoin.vn/",
-      description: "Cryptocurrency trading platform",
-      technologies: ["React.js", "TypeScript", "Web3"],
+      description: "Fullstack Developer - Create project to introduce company specializing in selling electrical products",
+      technologies: ["React.js", "TypeScript", "Product Management", "Article Management"],
     },
     {
       name: "Central Thailand",
       url: "https://www.central.co.th/",
-      description: "Leading e-commerce website in Thailand",
-      technologies: ["React.js", "Next.js", "Microservices"],
+      description: "Frontend Developer - Improved product interface and participated in upgrade process from version 1 to version 2",
+      technologies: ["React.js", "Next.js", "GraphQL", "E-commerce"],
     },
     {
       name: "PowerBuy Thailand",
       url: "https://powerbuy.co.th/th/",
-      description: "Electronics and technology retail website",
-      technologies: ["React.js", "Node.js", "MongoDB"],
+      description: "Frontend Developer - Improved product interface and user information management interfaces",
+      technologies: ["React.js", "Node.js", "MongoDB", "E-commerce"],
     },
     {
       name: "Carma Australia",
       url: "https://carma.com.au/",
-      description: "Car sharing platform",
-      technologies: ["React.js", "Express.js", "PostgreSQL"],
+      description: "Frontend Developer - Build interfaces and connect content with Contentful, build filters with multiple fields",
+      technologies: ["React.js", "Next.js", "GraphQL", "Contentful"],
     },
     {
-      name: "Omini Vietnam",
-      url: "https://omini.vn/",
-      description: "Service and utility website",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+      name: "KB Fina WebAdmin",
+      url: null,
+      description: "Frontend Developer - Manage customer e-wallet information, transaction information, and customer activities",
+      technologies: ["React.js", "Angular", "PrimeNG", "MySQL"],
+    },
+    {
+      name: "KB ILSANG",
+      url: null,
+      description: "Frontend Developer - Same as KBFina Web Admin but version for Indonesia market",
+      technologies: ["React.js", "Angular", "PrimeNG", "MySQL"],
+    },
+    {
+      name: "Motel Manager",
+      url: null,
+      description: "Fullstack Developer - Build logic flow to manage motel rooms and building costs",
+      technologies: ["React.js", "Express.js", "MySQL", "Full-stack"],
+    },
+    {
+      name: "TOPSS TOYOTA",
+      url: null,
+      description: "Fullstack Developer - Web-based management system for warehouses, storage yards, taxation, and distribution channels",
+      technologies: [".NET", "Angular", "SQL Server", "Management System"],
     },
   ];
 
@@ -240,7 +261,7 @@ export default function Experience() {
                 </span>
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                4 years of development journey with diverse and exciting projects
+                5+ years of development journey with diverse and exciting projects
               </p>
             </div>
 

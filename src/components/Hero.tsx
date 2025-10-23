@@ -3,7 +3,7 @@ import { Code, Coffee, Rocket, Sparkles, Star, Download } from 'lucide-react'
 export default function Hero() {
   // SSR: Không dùng useState/useEffect để lấy giá trị phía server
   // Hiển thị luôn nội dung đầy đủ, không animation typing hoặc hiệu ứng vào
-  const fullText = "Frontend Developer with 4 years of experience"
+  const fullText = "Fullstack Developer with 5+ years of experience"
   const isVisible = true
 
   return (
@@ -51,7 +51,7 @@ export default function Hero() {
           
           {/* Description with fade in */}
           <p className={`text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed ${isVisible ? 'animate-fade-in delay-300' : 'opacity-0'}`}>
-            React.js and Next.js specialist with a passion for creating exceptional web experiences. 
+            Fullstack Developer specializing in React.js, Next.js, .NET, and Angular with a passion for creating exceptional web experiences. 
             Always seeking new challenges and continuously learning.
           </p>
           
@@ -92,8 +92,8 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             <a
-              href="/cv/CV_Pham_Dai_Nghia.pdf"
-              download="CV_Pham_Dai_Nghia.pdf"
+              href="/cv/Pham-Dai-Nghia-CV.pdf"
+              download="Pham-Dai-Nghia-CV.pdf"
               className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover-lift relative overflow-hidden flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <Download className="w-5 h-5 relative z-10" />

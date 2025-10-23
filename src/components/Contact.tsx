@@ -189,7 +189,7 @@ export default function Contact() {
                     <div>
                       <p className="text-gray-400 text-sm">Location</p>
                         <p className="text-white font-medium group-hover/item:text-green-400 transition-colors">
-                          Vietnam
+                          Cầu Giấy - Hà Nội
                         </p>
                     </div>
                   </div>

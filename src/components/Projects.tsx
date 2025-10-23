@@ -5,98 +5,103 @@ export default function Projects() {
     {
       title: "Plevia City",
       description:
-        "Premium real estate website with modern interface and exceptional user experience. Integrated smart search features and 3D visualization.",
+        "Fullstack Developer - Optimize website SEO by adding title tags, meta, content, images. Convert pages from Client Side Rendering to Server Side Rendering and Incremental Static Regeneration for better performance.",
       image: "/api/placeholder/600/400",
       technologies: [
         "Next.js",
         "React.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "Three.js",
+        "SSR",
+        "ISR",
+        "SEO Optimization",
       ],
       liveUrl: "https://pleviacity.vn/",
       githubUrl: null,
       features: [
-        "Responsive design for all devices",
-        "Interactive 3D map integration",
-        "Smart search system",
-        "SEO and performance optimization",
+        "SEO optimization with meta tags and content",
+        "Client Side to Server Side Rendering conversion",
+        "Incremental Static Regeneration implementation",
+        "Performance optimization",
       ],
     },
     {
-      title: "Recoin Platform",
+      title: "TOPSS TOYOTA Management System",
       description:
-        "Cryptocurrency trading platform with intuitive interface and high-security features. Supports multiple cryptocurrencies and real-time trading.",
+        "Fullstack Developer - Web-based management system for warehouses, storage yards, taxation, and distribution channels. Built with .NET for backend services and Angular for frontend, providing secure APIs, real-time data processing, and user-friendly dashboards.",
       image: "/api/placeholder/600/400",
       technologies: [
-        "React.js",
-        "TypeScript",
-        "Web3",
-        "Ethers.js",
-        "Chart.js",
+        ".NET",
+        "Angular",
+        "SQL Server",
+        "RESTful API",
+        "Management System",
       ],
-      liveUrl: "https://recoin.vn/",
+      liveUrl: null,
       githubUrl: null,
       features: [
-        "Real-time trading",
-        "Visual price charts",
-        "High security with Web3",
-        "Multiple wallet support",
+        "Warehouse and storage yard management",
+        "Taxation and distribution channel tracking",
+        "Real-time data processing",
+        "Secure APIs and user-friendly dashboards",
       ],
     },
     {
-      title: "Central Thailand E-commerce",
+      title: "Carma Australia",
       description:
-        "Leading e-commerce website in Thailand with millions of products. Integrated diverse payment systems and smart inventory management.",
+        "Frontend Developer - Build interfaces and connect content with Contentful. Build filters with more than a dozen fields to query data with backend to get data. Successfully developed car e-commerce system as part of 10-member team.",
       image: "/api/placeholder/600/400",
       technologies: [
         "React.js",
         "Next.js",
-        "Node.js",
-        "Microservices",
-        "Redis",
+        "GraphQL",
+        "Contentful",
+        "E-commerce",
       ],
-      liveUrl: "https://www.central.co.th/",
+      liveUrl: "https://carma.com.au/",
       githubUrl: null,
       features: [
-        "Microservices architecture",
-        "Performance optimization",
-        "Diverse payment systems",
-        "Smart inventory management",
+        "Contentful CMS integration",
+        "Advanced filtering system with multiple fields",
+        "Car e-commerce functionality",
+        "Team collaboration in 10-member team",
       ],
     },
   ];
 
   const otherProjects = [
     {
+      title: "Recoin",
+      description: "Fullstack Developer - Create project to introduce company specializing in selling electrical products. Product management, article management",
+      technologies: ["React.js", "TypeScript", "Product Management", "Article Management"],
+      liveUrl: "https://recoin.vn/",
+    },
+    {
+      title: "Central Thailand",
+      description: "Frontend Developer - Improved product interface and user information management interfaces. Participate in upgrade process from version 1 to version 2",
+      technologies: ["React.js", "Next.js", "GraphQL", "E-commerce"],
+      liveUrl: "https://www.central.co.th/",
+    },
+    {
       title: "PowerBuy Thailand",
-      description:
-        "Electronics and technology retail website with user-friendly interface",
-      technologies: ["React.js", "Node.js", "MongoDB"],
+      description: "Frontend Developer - Improved product interface and user information management interfaces",
+      technologies: ["React.js", "Node.js", "MongoDB", "E-commerce"],
       liveUrl: "https://powerbuy.co.th/th/",
     },
     {
-      title: "Carma Australia",
-      description: "Car sharing platform with smart booking features",
-      technologies: ["React.js", "Express.js", "PostgreSQL"],
-      liveUrl: "https://carma.com.au/",
-    },
-    {
-      title: "Omini Vietnam",
-      description: "Service and utility website with modern interface",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-      liveUrl: "https://omini.vn/",
-    },
-    {
-      title: "KB Fina Management",
-      description: "Financial and banking management system for KB Fina",
-      technologies: ["Angular", "PrimeNG", "MySQL"],
+      title: "KB Fina WebAdmin",
+      description: "Frontend Developer - Manage customer e-wallet information, transaction information, and customer activities. Manage event streams and application tasks",
+      technologies: ["React.js", "Angular", "PrimeNG", "MySQL"],
       liveUrl: null,
     },
     {
-      title: "Toyota Management System",
-      description: "Internal management system for Toyota Vietnam",
-      technologies: ["React.js", "Node.js", "PostgreSQL"],
+      title: "KB ILSANG",
+      description: "Frontend Developer - Same as KBFina Web Admin but version for Indonesia. Built from scratch and improved management sections. Build new features suitable for Indonesian market",
+      technologies: ["React.js", "Angular", "PrimeNG", "MySQL"],
+      liveUrl: null,
+    },
+    {
+      title: "Motel Manager",
+      description: "Fullstack Developer - Build logic flow to manage motel rooms and manage building costs. Build backend and frontend code base using ReactJs, ExpressJs and MySql",
+      technologies: ["React.js", "Express.js", "MySQL", "Full-stack"],
       liveUrl: null,
     },
   ];
@@ -245,7 +250,7 @@ export default function Projects() {
                 </span>
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                The projects I&apos;m most proud of over the past 4 years
+                The projects I&apos;m most proud of over the past 5+ years
               </p>
             </div>
 
