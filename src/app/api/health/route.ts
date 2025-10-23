@@ -1,4 +1,4 @@
-# Health Check API for Portfolio Application
+// Health Check API for Portfolio Application
 
 export async function GET() {
   try {

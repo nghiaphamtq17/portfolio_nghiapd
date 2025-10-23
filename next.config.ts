@@ -6,18 +6,13 @@ const nextConfig: NextConfig = {
   
   // Experimental features
   experimental: {
-    outputFileTracingRoot: undefined,
+    // outputFileTracingRoot: undefined, // Removed - not available in this Next.js version
   },
   
   // Image optimization
   images: {
     domains: ['localhost'],
     unoptimized: false,
-  },
-  
-  // Environment variables
-  env: {
-    NODE_ENV: process.env.NODE_ENV || 'development',
   },
   
   // Security headers

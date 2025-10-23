@@ -31,5 +31,5 @@ export interface PayloadSkillsResponse {
 }
 
 export interface SkillCategoriesProps {
-  skillCategories: SkillCategory[]
+  skillCategories?: SkillCategory[]
 }
