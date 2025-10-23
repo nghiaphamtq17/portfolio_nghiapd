@@ -7,6 +7,7 @@ import {
   Award,
   TrendingUp,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Experience() {
   const experiences = [
@@ -373,14 +374,11 @@ export default function Experience() {
                       <h4 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
                         {project.name}
                       </h4>
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-purple-400 hover:text-purple-300 transition-colors group/link"
+                      <Link href={project.url || ""} target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 transition-colors group/link"
                       >
+                   
                         <ExternalLink className="w-5 h-5 group-hover/link:rotate-12 transition-transform duration-300" />
-                      </a>
+                      </Link>
                     </div>
 
                     <p className="text-gray-400 mb-4 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
