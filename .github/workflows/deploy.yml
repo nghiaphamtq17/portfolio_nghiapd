@@ -33,3 +33,17 @@ jobs:
           
           echo "✅ Deployment completed!"
           docker-compose ps
+          
+          # Clean up build cache after successful deployment
+          echo "🧹 Cleaning up build cache..."
+          docker builder prune -f
+          
+          # Clean up unused images
+          echo "🧹 Cleaning up unused images..."
+          docker image prune -f
+          
+          # Show final Docker system status
+          echo "📊 Final Docker system status:"
+          docker system df
+
+         
