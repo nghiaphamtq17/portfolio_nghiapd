@@ -4,10 +4,7 @@ const nextConfig: NextConfig = {
   // Enable standalone output for Docker
   output: 'standalone',
   
-  // Experimental features
-  experimental: {
-    // outputFileTracingRoot: undefined, // Removed - not available in this Next.js version
-  },
+  // Experimental features (empty object removed)
   
   // Image optimization
   images: {
