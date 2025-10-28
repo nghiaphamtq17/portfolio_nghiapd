@@ -262,7 +262,7 @@ export default function Experience() {
                 </span>
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                5+ years of development journey with diverse and exciting projects
+                4+ years of development journey with diverse and exciting projects
               </p>
             </div>
 

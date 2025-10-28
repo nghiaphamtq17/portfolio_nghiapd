@@ -59,7 +59,7 @@ export default function Skills({ skillCategories }: SkillCategoriesProps) {
           id: "5",
           name: "HTML/CSS/JS",
           experience: "Expert",
-          years: "5+ years",
+          years: "4+ years",
           projects: "20+ projects",
           description: "Core web technologies",
           category: "1",
@@ -399,7 +399,7 @@ export default function Skills({ skillCategories }: SkillCategoriesProps) {
               </h2>
               <p className="text-xl text-slate-400 max-w-2xl mx-auto">
                 Technologies and tools I&apos;ve gained expertise in over the
-                past 5+ years
+                past 4+ years
               </p>
             </div>
 

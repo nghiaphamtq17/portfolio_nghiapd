@@ -3,7 +3,7 @@ import { Code, Coffee, Rocket, Sparkles, Star, Download } from 'lucide-react'
 export default function Hero() {
   // SSR: Không dùng useState/useEffect để lấy giá trị phía server
   // Hiển thị luôn nội dung đầy đủ, không animation typing hoặc hiệu ứng vào
-  const fullText = "Fullstack Developer with 5+ years of experience"
+  const fullText = "Fullstack Developer with 4+ years of experience"
   const isVisible = true
 
   return (
@@ -36,7 +36,7 @@ export default function Hero() {
           {/* Main heading with gradient animation */}
           <h1 className={`text-5xl md:text-7xl font-bold mb-6 ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}>
             <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent animate-gradient-shift">
-              Phạm Đại Nghĩa
+              Nghia Pham Dai
             </span>
             <Sparkles className="inline-block w-8 h-8 md:w-12 md:h-12 text-blue-400 ml-4 animate-pulse" />
           </h1>

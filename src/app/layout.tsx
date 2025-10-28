@@ -5,13 +5,13 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Phạm Đại Nghĩa - Frontend Developer',
-  description: 'Portfolio of Phạm Đại Nghĩa - Frontend Developer with 4 years of experience in React.js, Next.js and modern web technologies',
-  keywords: 'Phạm Đại Nghĩa, nghiapd, Frontend Developer, React.js, Next.js, TypeScript, Web Development, Portfolio',
-  authors: [{ name: 'Phạm Đại Nghĩa' }],
+  title: 'Nghia Pham Dai - Frontend Developer',
+  description: 'Portfolio of Nghia Pham Dai - Frontend Developer with 4 years of experience in React.js, Next.js and modern web technologies',
+  keywords: 'Nghia Pham Dai, nghiapd, Frontend Developer, React.js, Next.js, TypeScript, Web Development, Portfolio',
+  authors: [{ name: 'Nghia Pham Dai' }],
   openGraph: {
-    title: 'Phạm Đại Nghĩa - Frontend Developer',
-    description: 'Portfolio of Phạm Đại Nghĩa - Frontend Developer with 4 years of experience',
+    title: 'Nghia Pham Dai - Frontend Developer',
+    description: 'Portfolio of Nghia Pham Dai - Frontend Developer with 4 years of experience',
     type: 'website',
   },
 }

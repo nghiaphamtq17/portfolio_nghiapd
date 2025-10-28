@@ -151,7 +151,7 @@ export default function Header() {
                 <Code className="w-5 h-5 text-white" />
               </div>
               <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-                Phạm Đại Nghĩa
+                Nghia Pham Dai
               </div>
             </div>
             

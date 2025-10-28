@@ -250,7 +250,7 @@ export default function Projects() {
                 </span>
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                The projects I&apos;m most proud of over the past 5+ years
+                The projects I&apos;m most proud of over the past 4+ years
               </p>
             </div>
 

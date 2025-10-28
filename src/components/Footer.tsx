@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* About */}
             <div>
-              <h3 className="text-2xl font-bold gradient-text mb-4">Phạm Đại Nghĩa</h3>
+              <h3 className="text-2xl font-bold gradient-text mb-4">Nghia Pham Dai</h3>
               <p className="text-gray-400 leading-relaxed">
                 Frontend Developer with 4 years of experience, passionate about creating amazing web experiences.
               </p>
@@ -79,7 +79,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="border-t border-slate-700 pt-8 text-center">
             <p className="text-gray-400 flex items-center justify-center gap-2">
-              © {currentYear} Phạm Đại Nghĩa. Made with 
+              © {currentYear} Nghia Pham Dai. Made with 
               <Heart className="w-4 h-4 text-red-500" />
               in Vietnam
             </p>

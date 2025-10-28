@@ -199,7 +199,7 @@ export default function About() {
                       by the ability to create amazing web applications.
                     </p>
                     <p className="group-hover:translate-x-2 transition-transform duration-300 delay-100">
-                      With 5+ years of experience in fullstack development, I have
+                      With 4+ years of experience in fullstack development, I have
                       had the opportunity to work with several large companies
                       such as SmartOSC, KBFina, and currently Nexus Frontier Tech.
                       Each project has provided me with valuable lessons and
