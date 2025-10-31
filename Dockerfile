@@ -2,6 +2,9 @@ FROM node:18-alpine
 
 WORKDIR /app
 
+ENV HOST=0.0.0.0
+ENV PORT=3000
+
 # Copy package files
 COPY package.json package-lock.json* ./
 
