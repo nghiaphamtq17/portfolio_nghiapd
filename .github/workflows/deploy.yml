@@ -36,6 +36,13 @@ jobs:
               sudo apt-get update && sudo apt-get install -y docker-compose-plugin
             fi
 
+            # Ensure firewall allows HTTP/HTTPS (idempotent)
+            if command -v ufw >/dev/null 2>&1; then
+              sudo ufw allow 80/tcp || true
+              sudo ufw allow 443/tcp || true
+              sudo ufw reload || true
+            fi
+
             # Prepare project directory
             sudo mkdir -p /var/www/portfolio_nghiapd
             sudo chown -R $USER:$USER /var/www/portfolio_nghiapd
