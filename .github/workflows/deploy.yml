@@ -3,6 +3,7 @@ name: Deploy to VPS
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -19,31 +20,57 @@ jobs:
         key: ${{ secrets.VPS_SSH_KEY }}
         port: ${{ secrets.VPS_PORT }}
         script: |
-          echo "🚀 Deploying portfolio..."
-          
-          # Go to project directory
-          cd /var/www/portfolio_nghiapd
-          
-          # Pull latest code
-          git pull origin main
-          
-          # Stop and rebuild containers
-          docker-compose down
-          docker-compose up -d --build
-          
-          echo "✅ Deployment completed!"
-          docker-compose ps
-          
-          # Clean up build cache after successful deployment
-          echo "🧹 Cleaning up build cache..."
-          docker builder prune -f
-          
-          # Clean up unused images
-          echo "🧹 Cleaning up unused images..."
-          docker image prune -f
-          
-          # Show final Docker system status
-          echo "📊 Final Docker system status:"
-          docker system df
+            set -e
+
+            echo "🚀 Deploying portfolio..."
+
+            # Ensure git, docker, and compose plugin are available (idempotent)
+            if ! command -v git >/dev/null 2>&1; then
+              sudo apt-get update && sudo apt-get install -y git
+            fi
+            if ! command -v docker >/dev/null 2>&1; then
+              curl -fsSL https://get.docker.com | sudo sh
+              sudo usermod -aG docker $USER || true
+            fi
+            if ! docker compose version >/dev/null 2>&1; then
+              sudo apt-get update && sudo apt-get install -y docker-compose-plugin
+            fi
+
+            # Prepare project directory
+            sudo mkdir -p /var/www/portfolio_nghiapd
+            sudo chown -R $USER:$USER /var/www/portfolio_nghiapd
+            cd /var/www/portfolio_nghiapd
+
+            # Clone if repo not present
+            if [ ! -d .git ]; then
+              # Replace with your actual repo URL if SSH needed
+              if git ls-remote https://github.com/${GITHUB_REPOSITORY}.git >/dev/null 2>&1; then
+                git clone https://github.com/${GITHUB_REPOSITORY}.git .
+              else
+                # Fallback: try pulling assuming remote already configured
+                echo "Repo URL not accessible anonymously. Ensure repo is cloned once on the server."
+              fi
+            fi
+
+            # Pull latest code from main
+            git fetch origin || true
+            git checkout -B main || true
+            git pull --rebase origin main || true
+
+            # Compose up (prefer new plugin, fallback to legacy)
+            if docker compose version >/dev/null 2>&1; then
+              docker compose down || true
+              docker compose up -d --build
+              docker compose ps
+            else
+              docker-compose down || true
+              docker-compose up -d --build
+              docker-compose ps
+            fi
+
+            # Cleanup
+            docker builder prune -f || true
+            docker image prune -f || true
+            echo "✅ Deployment completed!"
 
          
